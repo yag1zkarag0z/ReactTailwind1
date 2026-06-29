@@ -49,47 +49,50 @@ const Navbar = () => {
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center ">
-          <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={Logo} alt="Logo" className="w-10 " />
-              Shop
+      <div className="bg-primary/40 py-3">
+        <div className="container mx-auto flex items-center gap-4 px-4">
+          <div className="shrink-0">
+            <a
+              href="#"
+              className="flex items-center gap-2 font-bold text-2xl sm:text-3xl"
+            >
+              <img src={Logo} alt="Logo" className="w-10" />
+              Shopy
             </a>
           </div>
-          {/* search bar*/}
-          <div className=" flex justify-between items-center gap-4 ">
-            <div className="relative group hidden:sm:block">
+          {/* search + cart */}
+          <div className="flex flex-1 items-center justify-center gap-3">
+            <div className="relative group hidden sm:block w-10 hover:w-72 transition-all duration-300 z-[999]">
               <input
                 type="text"
                 placeholder="Search"
-                className="w-[200px] sm:w-[200px] group-hover:w-[300px]
-                transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary
+                className="w-full rounded-full border border-gray-300 bg-white py-2 pl-10 pr-4 opacity-0 transition-all duration-300
+                focus:outline-none focus:border-primary
+                group-hover:opacity-100
                 dark:border-gray-500
                 dark:bg-gray-800"
               />
-              <FaSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 transition-colors duration-200 group-hover:text-primary" />
             </div>
+            {/* order button */}
+            <button
+              onClick={() => alert("This feature is currently not available")}
+              className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-2 px-4 rounded-full flex items-center gap-3 group shrink-0"
+            >
+              <span className="hidden group-hover:block transition-all duration-200">
+                Order
+              </span>
+              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+            </button>
           </div>
-          {/* order button */}
-          <button
-            onClick={() => alert("This feature is currently not available")}
-            className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group
-           "
-          >
-            <span className="hidden group-hover:block transition-all duration-200">
-              Order
-            </span>
-            <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-          </button>
-          {/* Darkmode Switch */}
-          <div>
+          <div className="shrink-0">
+            {/* Darkmode Switch */}
             <DarkMode />
           </div>
         </div>
       </div>
       {/* lower Navbar */}
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
@@ -103,7 +106,7 @@ const Navbar = () => {
           ))}
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px]py-2">
+            <a href="#" className="flex items-center gap-[2px] py-2">
               Trending Products
               <span>
                 <FaCaretDown
@@ -119,7 +122,7 @@ const Navbar = () => {
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
                     <a
-                      href="{data.link}"
+                      href={data.link}
                       className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
                     >
                       {data.name}
