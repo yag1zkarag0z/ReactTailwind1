@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fea928;
+  --color-secondary: #ed8900;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
