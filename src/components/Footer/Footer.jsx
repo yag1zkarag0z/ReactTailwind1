@@ -41,10 +41,10 @@ const Footer = () => {
       <div className="container relative z-10">
         <div
           data-aos="zoom-in"
-          className="grid gap-10 border-b border-white/10 pb-16 pt-10 md:grid-cols-3"
+          className="grid gap-10 border-b border-white/10 pb-16 pt-10 text-center md:grid-cols-3"
         >
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
-            <h1 className="mb-3 flex items-center gap-3 text-left text-xl font-bold sm:text-3xl">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm md:mx-auto">
+            <h1 className="mb-3 flex items-center justify-center gap-3 text-xl font-bold sm:text-3xl">
               <img src={footerLogo} alt="" className="max-w-[50px]" />
               Shopsy
             </h1>
@@ -54,10 +54,10 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:col-span-2 md:grid-cols-2 md:pl-6">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:col-span-2 md:grid-cols-2 md:justify-items-center">
+            <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
               <h1 className="mb-4 text-xl font-bold">Important Links</h1>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-3 items-center">
                 {FooterLinks.map((link) => (
                   <li key={link.title}>
                     <a
@@ -72,13 +72,13 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+            <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
               <h1 className="mb-4 text-xl font-bold">LinkedIn</h1>
               <a
                 href="https://www.linkedin.com/in/yagiz-karagoz-b18820358/"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-primary"
+                className="group inline-flex items-center justify-center gap-2 text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-primary"
               >
                 <FaLinkedin className="text-2xl transition-transform duration-300 group-hover:scale-110" />
                 <span>Yağız Karagöz</span>
