@@ -47,14 +47,14 @@ const DropdownLinks = [
 
 const Navbar = () => {
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="sticky top-0 z-40 border-b border-orange-100/70 bg-white/95 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-950/90 dark:text-white">
       {/* upper Navbar */}
-      <div className="bg-primary/40 py-3">
+      <div className="bg-gradient-to-r from-primary/20 via-orange-200/30 to-secondary/20 py-3 dark:from-orange-500/10 dark:via-orange-400/10 dark:to-amber-500/10">
         <div className="container mx-auto flex items-center gap-4 px-4">
           <div className="shrink-0">
             <a
               href="#"
-              className="flex items-center gap-2 font-bold text-2xl sm:text-3xl"
+              className="flex items-center gap-2 font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white"
             >
               <img src={Logo} alt="Logo" className="w-10" />
               Shopy
@@ -77,7 +77,7 @@ const Navbar = () => {
             {/* order button */}
             <button
               onClick={() => alert("This feature is currently not available")}
-              className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-2 px-4 rounded-full flex items-center gap-3 group shrink-0"
+              className="bg-gradient-to-r from-primary to-secondary shadow-md shadow-orange-500/20 transition-all duration-200 text-white py-2 px-4 rounded-full flex items-center gap-3 group shrink-0 hover:shadow-lg hover:shadow-orange-500/30"
             >
               <span className="hidden group-hover:block transition-all duration-200">
                 Order
@@ -92,13 +92,13 @@ const Navbar = () => {
         </div>
       </div>
       {/* lower Navbar */}
-      <div className="flex justify-center ">
-        <ul className="sm:flex hidden items-center gap-4">
+      <div className="flex justify-center border-t border-orange-100/70 bg-white/90 py-2 dark:border-gray-800 dark:bg-gray-950/80">
+        <ul className="sm:flex hidden items-center gap-2">
           {Menu.map((data) => (
             <li key={data.id}>
               <a
                 href={data.link}
-                className="inline-block px-4 hover:text-primary duration-200"
+                className="inline-block rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-primary/10 hover:text-primary dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"
               >
                 {data.name}
               </a>
@@ -106,7 +106,10 @@ const Navbar = () => {
           ))}
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <a
+              href="#"
+              className="flex items-center gap-[2px] rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-primary/10 hover:text-primary dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white"
+            >
               Trending Products
               <span>
                 <FaCaretDown
@@ -117,13 +120,13 @@ const Navbar = () => {
                 />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white p-2 text-black shadow-md ">
+            <div className="absolute z-[9999] hidden w-[180px] rounded-xl border border-orange-100 bg-white p-2 text-black shadow-lg shadow-orange-500/10 group-hover:block dark:border-gray-800 dark:bg-gray-900 dark:text-white">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
                     <a
                       href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
+                      className="inline-block w-full rounded-lg px-3 py-2 text-sm hover:bg-primary/10 dark:hover:bg-white/10"
                     >
                       {data.name}
                     </a>
