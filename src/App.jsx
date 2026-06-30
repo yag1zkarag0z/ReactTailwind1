@@ -17,6 +17,7 @@ const App = () => {
   const handleOrderPopup = () => {
     setOrderPopup(!orderPopup);
   };
+
   React.useEffect(() => {
     AOS.init({
       offset: 100,
@@ -35,7 +36,6 @@ const App = () => {
       <TopProducts handleOrderPopup={handleOrderPopup} />
       <Banner />
       <Subscribe />
-      <Products />
       <Testimonials />
       <Footer />
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
