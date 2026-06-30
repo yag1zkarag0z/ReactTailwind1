@@ -1,0 +1,106 @@
+import React from "react";
+import footerLogo from "../../assets/logo.png";
+import Banner from "../../assets/website/footer-pattern (1).jpg";
+import { FaLinkedin } from "react-icons/fa";
+
+const BannerImg = {
+  backgroundImage: `url(${Banner})`,
+  backgroundPosition: "bottom",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  height: "100%",
+  width: "100%",
+};
+
+const FooterLinks = [
+  {
+    title: "Home",
+    link: "/#",
+  },
+  {
+    title: "About",
+    link: "/#about",
+  },
+  {
+    title: "Contact",
+    link: "/#contact",
+  },
+  {
+    title: "Blog",
+    link: "/#blog",
+  },
+];
+
+const Footer = () => {
+  return (
+    <div style={BannerImg} className="relative overflow-hidden text-white">
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/75 to-slate-950/95" />
+      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
+
+      <div className="container relative z-10">
+        <div
+          data-aos="zoom-in"
+          className="grid gap-10 border-b border-white/10 pb-16 pt-10 md:grid-cols-3"
+        >
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+            <h1 className="mb-3 flex items-center gap-3 text-left text-xl font-bold sm:text-3xl">
+              <img src={footerLogo} alt="" className="max-w-[50px]" />
+              Shopsy
+            </h1>
+            <p className="text-sm leading-6 text-gray-200">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
+              beatae ea recusandae blanditiis veritatis.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:col-span-2 md:grid-cols-2 md:pl-6">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+              <h1 className="mb-4 text-xl font-bold">Important Links</h1>
+              <ul className="flex flex-col gap-3">
+                {FooterLinks.map((link) => (
+                  <li key={link.title}>
+                    <a
+                      href={link.link}
+                      className="group inline-flex items-center gap-2 text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-primary"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary/60 transition-all duration-300 group-hover:w-3" />
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+              <h1 className="mb-4 text-xl font-bold">LinkedIn</h1>
+              <a
+                href="https://www.linkedin.com/in/yagiz-karagoz-b18820358/"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-primary"
+              >
+                <FaLinkedin className="text-2xl transition-transform duration-300 group-hover:scale-110" />
+                <span>Yağız Karagöz</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-4 py-6 text-center text-sm text-gray-300 sm:flex-row">
+          <p>© 2026 Shopsy. All rights reserved.</p>
+          <a
+            href="https://www.linkedin.com/in/yagiz-karagoz-b18820358/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-primary transition-all duration-300 hover:text-secondary hover:underline hover:underline-offset-4"
+          >
+            By Yağız Karagöz
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
