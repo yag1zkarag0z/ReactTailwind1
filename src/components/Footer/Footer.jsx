@@ -1,5 +1,5 @@
 import React from "react";
-import footerLogo from "../../assets/logo.png";
+import footerLogo from "../../assets/Logo.png";
 import Banner from "../../assets/website/footer-pattern (1).jpg";
 import { FaLinkedin } from "react-icons/fa";
 
