@@ -80,10 +80,14 @@ const Products = () => {
                     </div>
                     </div>
                     </div>
-                  
+                    
                 ))}
-                
-             
+            </div>
+            {/* view all button */}
+            <div className="mt-10 flex justify-center">
+              <button className="cursor-pointer rounded-md bg-primary px-5 py-2 text-white transition-colors duration-200 hover:bg-secondary">
+                View All Button
+              </button>
             </div>
         </div>
     </div>
