@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
 
-      <div className="container relative z-10 py-12">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12">
         <div
           data-aos="zoom-in"
           className="mx-auto flex max-w-5xl flex-col items-center gap-10 border-b border-white/10 pb-12 text-center"
@@ -42,7 +42,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="grid w-full max-w-3xl grid-cols-1 gap-6 justify-items-center sm:grid-cols-2">
             <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
               <h1 className="mb-4 text-xl font-bold">Important Links</h1>
               <ul className="flex flex-col items-center gap-3">
@@ -92,3 +92,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
